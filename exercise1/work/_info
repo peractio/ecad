@@ -1,0 +1,148 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecad/Desktop/exercise1
+vdebounce
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1574897587
+!i10b 1
+!s100 WHa>TL];_Pb>;;Cj>X4lA3
+IIM^<DhMC997K9VdEGT80L1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 debounce_sv_unit
+S1
+R0
+w1574897567
+8debounce.sv
+Fdebounce.sv
+L0 3
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1574897587.000000
+!s107 debounce.sv|
+!s90 -reportprogress|300|debounce.sv|
+!i113 1
+Z6 tCvgOpt 0
+vdebounce_extra
+R1
+!s110 1574362280
+!i10b 1
+!s100 0OUKOnzjfH0Zc>2RD_bh20
+I_f2e<hU[J8=0LgGjN8ZK61
+R3
+!s105 debounce_extra_sv_unit
+S1
+R0
+w1574353944
+8debounce_extra.sv
+Fdebounce_extra.sv
+L0 3
+R4
+r1
+!s85 0
+31
+!s108 1574362279.000000
+!s107 debounce_extra.sv|
+!s90 -reportprogress|300|debounce_extra.sv|
+!i113 1
+R6
+vrotary
+R1
+Z7 !s110 1574362429
+!i10b 1
+!s100 6MfH2Y@GRb:QF[bahlb?M0
+ISYl`MlWAKE[=8BJ6Bk1c00
+R3
+!s105 rotary_sv_unit
+S1
+R0
+w1574362273
+8rotary.sv
+Frotary.sv
+L0 3
+R4
+r1
+!s85 0
+31
+!s108 1574362428.000000
+!s107 rotary.sv|
+!s90 -reportprogress|300|rotary.sv|
+!i113 1
+R6
+vsynchroniser
+R1
+R2
+!i10b 1
+!s100 [Z6ZmOWzYO`3n7U?jjF;l1
+ICS]:3g^5[zf@02mCaX:X52
+R3
+!s105 synchroniser_sv_unit
+S1
+R0
+w1574350224
+8synchroniser.sv
+Fsynchroniser.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 synchroniser.sv|
+!s90 -reportprogress|300|synchroniser.sv|
+!i113 1
+R6
+vtb_debounce
+R1
+R2
+!i10b 1
+!s100 64XM::6oZ@IDEYFa^9?ad1
+I<Wd^Slk4@0L:z_>KAce1I2
+R3
+!s105 tb_debounce_sv_unit
+S1
+R0
+w1568814488
+8tb_debounce.sv
+Ftb_debounce.sv
+L0 8
+R4
+r1
+!s85 0
+31
+R5
+!s107 tb_debounce.sv|
+!s90 -reportprogress|300|tb_debounce.sv|
+!i113 1
+R6
+vtb_rotary
+R1
+R7
+!i10b 1
+!s100 4SJojM@8G^F[T;h0I^98^3
+IQndPKPWAeARgWDlePfA[?0
+R3
+!s105 tb_rotary_sv_unit
+S1
+R0
+w1574356805
+8tb_rotary.sv
+Ftb_rotary.sv
+L0 8
+R4
+r1
+!s85 0
+31
+!s108 1574362429.000000
+!s107 tb_rotary.sv|
+!s90 -reportprogress|300|tb_rotary.sv|
+!i113 1
+R6

@@ -1,0 +1,41 @@
+# do tb_debounce.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Start time: 23:32:52 on Nov 27,2019
+# vlog synchroniser.sv 
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# -- Compiling module synchroniser
+# 
+# Top level modules:
+# 	synchroniser
+# End time: 23:32:52 on Nov 27,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Start time: 23:32:52 on Nov 27,2019
+# vlog debounce.sv 
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# -- Compiling module debounce
+# 
+# Top level modules:
+# 	debounce
+# End time: 23:32:53 on Nov 27,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Start time: 23:32:53 on Nov 27,2019
+# vlog tb_debounce.sv 
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# -- Compiling module tb_debounce
+# 
+# Top level modules:
+# 	tb_debounce
+# End time: 23:32:53 on Nov 27,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.tb_debounce 
+# Start time: 23:32:53 on Nov 27,2019
+# Loading sv_std.std
+# Loading work.tb_debounce
+# Loading work.debounce
+# Loading work.synchroniser
+# Finishing.
+# No errors. Tests passed!
+# ** Note: $finish    : tb_debounce.sv(119)
+#    Time: 30000010 ns  Iteration: 1  Instance: /tb_debounce
+# End time: 23:33:02 on Nov 27,2019, Elapsed time: 0:00:09
+# Errors: 0, Warnings: 0

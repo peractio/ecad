@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Wed Nov 27 21:39:53 2019
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : clarvi_fpga
+Top-level Entity Name : clarvi_fpga
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 3142
+Total pins : 247
+Total virtual pins : 0
+Total block memory bits : 2,621,814
+Total DSP Blocks : 2
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 1
+Total DLLs : 0

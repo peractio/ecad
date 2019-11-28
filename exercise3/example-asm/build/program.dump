@@ -1,0 +1,120 @@
+
+build/program.elf:     file format elf32-littleriscv
+
+Contents of section .text.init:
+ 0000 17010100 130101fe 97020000 93824201  ..............B.
+ 0010 73905230 ef00000e 73000000 6f000000  s.R0....s...o...
+Contents of section .text:
+ 0020 930e1000 6f000005 130101fe 23201100  ....o.......# ..
+ 0030 93020000 13030000 93030500 130e0000  ................
+ 0040 130f1e00 63040504 63880300 130e1e00  ....c...c.......
+ 0050 93d31300 6ff05fff 630a0e02 130efeff  ....o._.c.......
+ 0060 13131300 b313cf01 b3737500 930e0000  .........su.....
+ 0070 e39803fa 3363d301 e340b3fe 3303b340  ....3c...@..3..@
+ 0080 b313cf01 b3e27200 6ff01ffd 13850200  ......r.o.......
+ 0090 93050300 83200100 13010102 67800000  ..... ......g...
+ 00a0 130101fe 23201100 1305c000 93054000  ....# ........@.
+ 00b0 eff09ff7 7310257b 7390257b 1305d005  ....s.%{s.%{....
+ 00c0 93057000 eff05ff6 7310257b 7390257b  ..p..._.s.%{s.%{
+ 00d0 37553412 13658567 9305f00f eff0dff4  7U4..e.g........
+ 00e0 7310257b 7390257b 83200100 13010102  s.%{s.%{. ......
+ 00f0 67800000 130101fe 23201100 1305f03f  g.......# .....?
+ 0100 93050019 eff05ff2 7310257b 7390257b  ......_.s.%{s.%{
+ 0110 83200100 13010102 67800000           . ......g...    
+
+Disassembly of section .text.init:
+
+00000000 <entry>:
+   0:	00010117          	auipc	sp,0x10
+   4:	fe010113          	addi	sp,sp,-32 # ffe0 <main+0xfeec>
+   8:	00000297          	auipc	t0,0x0
+   c:	01428293          	addi	t0,t0,20 # 1c <end>
+  10:	30529073          	csrw	mtvec,t0
+  14:	0e0000ef          	jal	ra,f4 <main>
+  18:	00000073          	ecall
+
+0000001c <end>:
+  1c:	0000006f          	j	1c <end>
+
+Disassembly of section .text:
+
+00000020 <setOne>:
+  20:	00100e93          	li	t4,1
+  24:	0500006f          	j	74 <divloop_cont>
+
+00000028 <div>:
+  28:	fe010113          	addi	sp,sp,-32
+  2c:	00112023          	sw	ra,0(sp)
+  30:	00000293          	li	t0,0
+  34:	00000313          	li	t1,0
+  38:	00050393          	mv	t2,a0
+  3c:	00000e13          	li	t3,0
+  40:	001e0f13          	addi	t5,t3,1
+  44:	04050463          	beqz	a0,8c <divend>
+
+00000048 <divfindi>:
+  48:	00038863          	beqz	t2,58 <divloop>
+  4c:	001e0e13          	addi	t3,t3,1
+  50:	0013d393          	srli	t2,t2,0x1
+  54:	ff5ff06f          	j	48 <divfindi>
+
+00000058 <divloop>:
+  58:	020e0a63          	beqz	t3,8c <divend>
+  5c:	fffe0e13          	addi	t3,t3,-1
+  60:	00131313          	slli	t1,t1,0x1
+  64:	01cf13b3          	sll	t2,t5,t3
+  68:	007573b3          	and	t2,a0,t2
+  6c:	00000e93          	li	t4,0
+  70:	fa0398e3          	bnez	t2,20 <setOne>
+
+00000074 <divloop_cont>:
+  74:	01d36333          	or	t1,t1,t4
+
+00000078 <divupdate>:
+  78:	feb340e3          	blt	t1,a1,58 <divloop>
+  7c:	40b30333          	sub	t1,t1,a1
+  80:	01cf13b3          	sll	t2,t5,t3
+  84:	0072e2b3          	or	t0,t0,t2
+  88:	fd1ff06f          	j	58 <divloop>
+
+0000008c <divend>:
+  8c:	00028513          	mv	a0,t0
+  90:	00030593          	mv	a1,t1
+  94:	00012083          	lw	ra,0(sp)
+  98:	02010113          	addi	sp,sp,32
+  9c:	00008067          	ret
+
+000000a0 <checker>:
+  a0:	fe010113          	addi	sp,sp,-32
+  a4:	00112023          	sw	ra,0(sp)
+  a8:	00c00513          	li	a0,12
+  ac:	00400593          	li	a1,4
+  b0:	f79ff0ef          	jal	ra,28 <div>
+  b4:	7b251073          	csrw	dscratch,a0
+  b8:	7b259073          	csrw	dscratch,a1
+  bc:	05d00513          	li	a0,93
+  c0:	00700593          	li	a1,7
+  c4:	f65ff0ef          	jal	ra,28 <div>
+  c8:	7b251073          	csrw	dscratch,a0
+  cc:	7b259073          	csrw	dscratch,a1
+  d0:	12345537          	lui	a0,0x12345
+  d4:	67856513          	ori	a0,a0,1656
+  d8:	0ff00593          	li	a1,255
+  dc:	f4dff0ef          	jal	ra,28 <div>
+  e0:	7b251073          	csrw	dscratch,a0
+  e4:	7b259073          	csrw	dscratch,a1
+  e8:	00012083          	lw	ra,0(sp)
+  ec:	02010113          	addi	sp,sp,32
+  f0:	00008067          	ret
+
+000000f4 <main>:
+  f4:	fe010113          	addi	sp,sp,-32
+  f8:	00112023          	sw	ra,0(sp)
+  fc:	3ff00513          	li	a0,1023
+ 100:	19000593          	li	a1,400
+ 104:	f25ff0ef          	jal	ra,28 <div>
+ 108:	7b251073          	csrw	dscratch,a0
+ 10c:	7b259073          	csrw	dscratch,a1
+ 110:	00012083          	lw	ra,0(sp)
+ 114:	02010113          	addi	sp,sp,32
+ 118:	00008067          	ret

@@ -1,0 +1,290 @@
+Analysis & Synthesis report for toplevel
+Thu Nov 21 21:39:07 2019
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Port Connectivity Checks: "shiftregctl:shiftreg"
+  5. Port Connectivity Checks: "rotary:r_rot"
+  6. Port Connectivity Checks: "rotary:l_rot"
+  7. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Thu Nov 21 21:39:07 2019           ;
+; Quartus Prime Version       ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name               ; toplevel                                    ;
+; Top-level Entity Name       ; toplevel                                    ;
+; Family                      ; Cyclone V                                   ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; toplevel           ; toplevel           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Verilog Show LMF Mapping Messages                                               ; Off                ;                    ;
+; Verilog Version                                                                 ; SystemVerilog_2005 ; Verilog_2001       ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                               ; Enable             ; Enable             ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "shiftregctl:shiftreg"                                                                         ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; buttons[11..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; buttons[3]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; buttons[0]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rotary:r_rot"                                                                          ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; rot_cw  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rot_ccw ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rotary:l_rot"                                                                          ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; rot_cw  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rot_ccw ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Thu Nov 21 21:38:10 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ecad_fpga -c toplevel
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20029): Only one processor detected - disabling parallel compilation
+Info (12021): Found 1 design units, including 1 entities, in source file rotary.sv
+    Info (12023): Found entity 1: rotary File: /home/ecad/Desktop/exercise2/ecad_fpga_1/rotary.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file debounce.sv
+    Info (12023): Found entity 1: debounce File: /home/ecad/Desktop/exercise2/ecad_fpga_1/debounce.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file synchroniser.sv
+    Info (12023): Found entity 1: synchroniser File: /home/ecad/Desktop/exercise2/ecad_fpga_1/synchroniser.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file shiftregctl.sv
+    Info (12023): Found entity 1: shiftregctl File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hex_to_7seg.sv
+    Info (12023): Found entity 1: hex_to_7seg File: /home/ecad/Desktop/exercise2/ecad_fpga_1/hex_to_7seg.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel.sv
+    Info (12023): Found entity 1: toplevel File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 34
+Info (12127): Elaborating entity "toplevel" for the top level hierarchy
+Warning (10858): Verilog HDL warning at toplevel.sv(267): object buttons used but never assigned File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 267
+Warning (10030): Net "buttons" at toplevel.sv(267) has no driver or initial value, using a default initial value '0' File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 267
+Warning (10034): Output port "DRAM_ADDR" at toplevel.sv(57) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 57
+Warning (10034): Output port "DRAM_BA" at toplevel.sv(58) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 58
+Warning (10034): Output port "HEX0" at toplevel.sv(80) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 80
+Warning (10034): Output port "HEX1" at toplevel.sv(81) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 81
+Warning (10034): Output port "VGA_B" at toplevel.sv(171) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 171
+Warning (10034): Output port "VGA_G" at toplevel.sv(174) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 174
+Warning (10034): Output port "VGA_R" at toplevel.sv(176) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 176
+Warning (10034): Output port "LCD_R_out" at toplevel.sv(189) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 189
+Warning (10034): Output port "LCD_G_out" at toplevel.sv(190) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 190
+Warning (10034): Output port "LCD_B_out" at toplevel.sv(191) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 191
+Warning (10034): Output port "ADC_DIN" at toplevel.sv(38) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 38
+Warning (10034): Output port "ADC_SCLK" at toplevel.sv(40) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 40
+Warning (10034): Output port "AUD_DACDAT" at toplevel.sv(46) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 46
+Warning (10034): Output port "AUD_XCK" at toplevel.sv(48) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 48
+Warning (10034): Output port "DRAM_CAS_N" at toplevel.sv(59) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 59
+Warning (10034): Output port "DRAM_CKE" at toplevel.sv(60) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 60
+Warning (10034): Output port "DRAM_CLK" at toplevel.sv(61) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 61
+Warning (10034): Output port "DRAM_CS_N" at toplevel.sv(62) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 62
+Warning (10034): Output port "DRAM_LDQM" at toplevel.sv(64) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 64
+Warning (10034): Output port "DRAM_RAS_N" at toplevel.sv(65) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 65
+Warning (10034): Output port "DRAM_UDQM" at toplevel.sv(66) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 66
+Warning (10034): Output port "DRAM_WE_N" at toplevel.sv(67) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 67
+Warning (10034): Output port "FAN_CTRL" at toplevel.sv(70) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 70
+Warning (10034): Output port "FPGA_I2C_SCLK" at toplevel.sv(73) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 73
+Warning (10034): Output port "IRDA_TXD" at toplevel.sv(145) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 145
+Warning (10034): Output port "TD_RESET_N" at toplevel.sv(166) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 166
+Warning (10034): Output port "VGA_BLANK_N" at toplevel.sv(172) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 172
+Warning (10034): Output port "VGA_CLK" at toplevel.sv(173) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 173
+Warning (10034): Output port "VGA_HS" at toplevel.sv(175) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 175
+Warning (10034): Output port "VGA_SYNC_N" at toplevel.sv(177) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 177
+Warning (10034): Output port "VGA_VS" at toplevel.sv(178) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 178
+Warning (10034): Output port "LEDRINGn" at toplevel.sv(186) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 186
+Warning (10034): Output port "LCD_HSYNC" at toplevel.sv(196) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 196
+Warning (10034): Output port "LCD_VSYNC" at toplevel.sv(197) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 197
+Warning (10034): Output port "LCD_DEN" at toplevel.sv(198) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 198
+Warning (10034): Output port "LCD_DCLK" at toplevel.sv(199) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 199
+Warning (10034): Output port "LCD_ON" at toplevel.sv(200) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 200
+Warning (10034): Output port "LCD_BACKLIGHT" at toplevel.sv(201) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 201
+Warning (10034): Output port "TOUCH_WAKE" at toplevel.sv(209) has no driver File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 209
+Info (12128): Elaborating entity "rotary" for hierarchy "rotary:l_rot" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 257
+Warning (10230): Verilog HDL assignment warning at rotary.sv(41): truncated value with size 32 to match size of target (8) File: /home/ecad/Desktop/exercise2/ecad_fpga_1/rotary.sv Line: 41
+Warning (10230): Verilog HDL assignment warning at rotary.sv(42): truncated value with size 32 to match size of target (2) File: /home/ecad/Desktop/exercise2/ecad_fpga_1/rotary.sv Line: 42
+Warning (10230): Verilog HDL assignment warning at rotary.sv(48): truncated value with size 32 to match size of target (2) File: /home/ecad/Desktop/exercise2/ecad_fpga_1/rotary.sv Line: 48
+Warning (10230): Verilog HDL assignment warning at rotary.sv(57): truncated value with size 32 to match size of target (8) File: /home/ecad/Desktop/exercise2/ecad_fpga_1/rotary.sv Line: 57
+Warning (10230): Verilog HDL assignment warning at rotary.sv(58): truncated value with size 32 to match size of target (2) File: /home/ecad/Desktop/exercise2/ecad_fpga_1/rotary.sv Line: 58
+Warning (10230): Verilog HDL assignment warning at rotary.sv(64): truncated value with size 32 to match size of target (2) File: /home/ecad/Desktop/exercise2/ecad_fpga_1/rotary.sv Line: 64
+Info (12128): Elaborating entity "debounce" for hierarchy "rotary:l_rot|debounce:dut" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/rotary.sv Line: 21
+Warning (10230): Verilog HDL assignment warning at debounce.sv(27): truncated value with size 32 to match size of target (14) File: /home/ecad/Desktop/exercise2/ecad_fpga_1/debounce.sv Line: 27
+Info (12128): Elaborating entity "synchroniser" for hierarchy "rotary:l_rot|debounce:dut|synchroniser:dut" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/debounce.sv Line: 19
+Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "hex_to_7seg:l_hex5" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 260
+Info (12128): Elaborating entity "shiftregctl" for hierarchy "shiftregctl:shiftreg" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 269
+Warning (10230): Verilog HDL assignment warning at shiftregctl.sv(32): truncated value with size 32 to match size of target (9) File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 32
+Warning (10230): Verilog HDL assignment warning at shiftregctl.sv(42): truncated value with size 32 to match size of target (5) File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 42
+Error (12014): Net "buttons_decoded.button_b", which fans out to "LEDR[1]~reg0", cannot be assigned more than one value File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 240
+    Error (12015): Net is fed by "GND"
+    Error (12015): Net is fed by "shiftregctl:shiftreg|buttons[15]" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 24
+Error (12014): Net "buttons_decoded.button_a", which fans out to "LEDR[0]~reg0", cannot be assigned more than one value File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 240
+    Error (12015): Net is fed by "GND"
+    Error (12015): Net is fed by "shiftregctl:shiftreg|buttons[14]" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 24
+Error (12014): Net "buttons_decoded.button_y", which fans out to "LEDR[2]~reg0", cannot be assigned more than one value File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 240
+    Error (12015): Net is fed by "GND"
+    Error (12015): Net is fed by "shiftregctl:shiftreg|buttons[13]" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 24
+Error (12014): Net "buttons_decoded.button_x", which fans out to "LEDR[3]~reg0", cannot be assigned more than one value File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 240
+    Error (12015): Net is fed by "GND"
+    Error (12015): Net is fed by "shiftregctl:shiftreg|buttons[12]" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 24
+Error (12014): Net "buttons_decoded.nav_u", which fans out to "LEDR[6]~reg0", cannot be assigned more than one value File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 240
+    Error (12015): Net is fed by "GND"
+    Error (12015): Net is fed by "shiftregctl:shiftreg|buttons[7]" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 24
+Error (12014): Net "buttons_decoded.nav_l", which fans out to "LEDR[7]~reg0", cannot be assigned more than one value File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 240
+    Error (12015): Net is fed by "GND"
+    Error (12015): Net is fed by "shiftregctl:shiftreg|buttons[6]" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 24
+Error (12014): Net "buttons_decoded.nav_r", which fans out to "LEDR[5]~reg0", cannot be assigned more than one value File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 240
+    Error (12015): Net is fed by "GND"
+    Error (12015): Net is fed by "shiftregctl:shiftreg|buttons[5]" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 24
+Error (12014): Net "buttons_decoded.nav_d", which fans out to "LEDR[4]~reg0", cannot be assigned more than one value File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 240
+    Error (12015): Net is fed by "GND"
+    Error (12015): Net is fed by "shiftregctl:shiftreg|buttons[4]" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 24
+Error (12014): Net "buttons_decoded.dialr_click", which fans out to "LEDR[8]~reg0", cannot be assigned more than one value File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 240
+    Error (12015): Net is fed by "GND"
+    Error (12015): Net is fed by "shiftregctl:shiftreg|buttons[2]" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 24
+Error (12014): Net "buttons_decoded.diall_click", which fans out to "LEDR[9]~reg0", cannot be assigned more than one value File: /home/ecad/Desktop/exercise2/ecad_fpga_1/toplevel.sv Line: 240
+    Error (12015): Net is fed by "GND"
+    Error (12015): Net is fed by "shiftregctl:shiftreg|buttons[1]" File: /home/ecad/Desktop/exercise2/ecad_fpga_1/shiftregctl.sv Line: 24
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 30 errors, 51 warnings
+    Error: Peak virtual memory: 947 megabytes
+    Error: Processing ended: Thu Nov 21 21:39:07 2019
+    Error: Elapsed time: 00:00:57
+    Error: Total CPU time (on all processors): 00:00:52
+
+
