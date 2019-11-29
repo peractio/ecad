@@ -215,8 +215,6 @@ module clarvi_fpga(
 
 );
 
-// code goes here
-
        logic      [7:0]  LCD_R;
        logic      [7:0]  LCD_G;
        logic      [7:0]  LCD_B;
@@ -237,61 +235,17 @@ module clarvi_fpga(
 	end
 
       logic [23:0] hexDigits_pio;
-      
-// typedef struct packed {
-// 	logic diall_click;
-// 	logic dialr_click;
-// 	logic nav_l;
-// 	logic nav_u;
-// 	logic nav_r;
-// 	logic nav_d;
-// 	logic button_x;
-// 	logic button_y;
-// 	logic button_b;
-// 	logic button_a;
-// 	logic spare0;
-// 	logic touch_irq;
-// 	logic spare1;
-// 	logic spare2;
-// 	logic nav_click;
-// 	logic temperature_alarm;
-// } buttonsT;
-
-
-// buttonsT buttons_decoded;
-// logic[15:0] buttons;
-
-// always_comb begin
-// 	buttons_decoded = buttons;
-// 	LEDR[0] = buttons_decoded.diall_click;
-// 	LEDR[1] = buttons_decoded.dialr_click;
-// 	LEDR[2] = buttons_decoded.nav_l;
-// 	LEDR[3] = buttons_decoded.nav_u;
-// 	LEDR[4] = buttons_decoded.nav_r;
-// 	LEDR[5] = buttons_decoded.nav_d;
-// 	LEDR[6] = buttons_decoded.button_x;
-// 	LEDR[7] = buttons_decoded.button_y;
-// 	LEDR[8] = buttons_decoded.button_b;
-// 	LEDR[9] = buttons_decoded.button_a;
-// end
-
 
    clarvi_soc qsys0 (
         .clk_clk                                   (CLOCK_50),
         .reset_reset_n                             (KEY[0]),
-        .pio_leds_external_connection_export                            (LEDR),
-        .pio_hexdigits_external_connection_export(hexDigits_pio),
-      //   .buttonsctl_0_shiftreg_in_shiftreg_in     (SHIFT_OUT),
-      //   .buttonsctl_0_shiftreg_out_shiftreg_loadn (SHIFT_LOAD),
-      //   .buttonsctl_0_shiftreg_out_shiftreg_clk   (SHIFT_CLKIN),
-      //   .rotaryctl_left_rotary_in_rotary_in       (DIALL),
-      //   .rotaryctl_right_rotary_in_rotary_in      (DIALR),
-
-        .pio_leftdial_external_connection_export(DIALL),
-        .pio_rightdial_external_connection_export(DIALR),
-
-      //   .pio_displaybuttons_external_connection_export(buttons),
-        
+        .pio_leds_external_connection_export       (LEDR),
+        .pio_hexdigits_external_connection_export  (hexDigits_pio),
+        .rotaryctl_left_rotary_in_rotary_in        (DIALL),
+        .rotaryctl_right_rotary_in_rotary_in       (DIALR),
+        .shiftregctl_0_shiftreg_clk_shiftreg_clk     (SHIFT_CLKIN),
+        .shiftregctl_0_shiftreg_loadn_shiftreg_loadn (SHIFT_LOAD),
+        .shiftregctl_0_shiftreg_out_shiftreg_out     (SHIFT_OUT),
         .pixelstream_0_conduit_end_0_lcd_red   (LCD_R),   // pixelstream_0_conduit_end_0.lcd_red
         .pixelstream_0_conduit_end_0_lcd_green (LCD_G), //                            .lcd_green
         .pixelstream_0_conduit_end_0_lcd_blue  (LCD_B),  //                            .lcd_blue
@@ -299,7 +253,6 @@ module clarvi_fpga(
         .pixelstream_0_conduit_end_0_lcd_vsync (LCD_VSYNC), //                            .lcd_vsync
         .pixelstream_0_conduit_end_0_lcd_de    (LCD_DEN),    //                            .lcd_de
         .pixelstream_0_conduit_end_0_lcd_dclk    (LCD_DCLK),    //                            .lcd_dclk
-//        .pixelstream_0_conduit_end_0_lcd_dclk_en (<connected-to-pixelstream_0_conduit_end_0_lcd_dclk_en>), //                            .lcd_dclk_en
     );
 
       hex_to_7seg hex0(.hexval(hexDigits_pio[3:0]),   .ledcode(HEX0));
